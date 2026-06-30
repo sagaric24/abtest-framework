@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "abtest-framework"
+version = "0.1.0"
+description = "A/B test framework: power analysis, frequentist & Bayesian tests, CUPED, sequential testing, novelty detection"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+keywords = ["ab-testing", "statistics", "bayesian", "causal-inference", "data-science"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "statsmodels>=0.14",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30", "matplotlib>=3.7", "seaborn>=0.12"]
+dev = ["pytest>=7", "pytest-cov", "black", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/abtest-framework"
+Documentation = "https://github.com/yourusername/abtest-framework#readme"
+Issues = "https://github.com/yourusername/abtest-framework/issues"
+
+[tool.setuptools.packages.find]
+include = ["abtest*"]
+
+[tool.ruff]
+line-length = 90
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
